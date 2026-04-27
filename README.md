@@ -1,281 +1,357 @@
 <div align="center">
 
-<br />
-
 # ⚖️ RayCtify
 
-### *Achieving Algorithmic Equilibrium.*
+### *Achieving Algorithmic Equilibrium*
 
-**A premium AI auditing framework that detects, neutralizes, and evaluates demographic bias in financial loan approval models — in real time.**
+**The institutional-grade AI auditing framework for detecting, neutralizing, and evaluating demographic bias in financial loan approval models.**
 
-<br />
-
-[![Python](https://img.shields.io/badge/Python-3.11-3776AB?style=flat-square&logo=python&logoColor=white)](https://python.org)
-[![FastAPI](https://img.shields.io/badge/FastAPI-async-009688?style=flat-square&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
-[![React](https://img.shields.io/badge/React-Vite-61DAFB?style=flat-square&logo=react&logoColor=black)](https://react.dev)
-[![Cloud Run](https://img.shields.io/badge/Google_Cloud-Run-4285F4?style=flat-square&logo=googlecloud&logoColor=white)](https://cloud.google.com/run)
-[![Firebase](https://img.shields.io/badge/Firebase-Hosting-FFCA28?style=flat-square&logo=firebase&logoColor=black)](https://firebase.google.com)
-[![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
-[![Zero Retention](https://img.shields.io/badge/Data_Policy-Zero_Retention-red?style=flat-square)](#-security--data-privacy-policy)
-
-<br />
+[![License: Enterprise](https://img.shields.io/badge/License-Enterprise-blue.svg)](LICENSE)
+[![Python](https://img.shields.io/badge/Python-3.11-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.110+-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
+[![React](https://img.shields.io/badge/React-Vite-61DAFB?logo=react&logoColor=white)](https://vitejs.dev/)
+[![GCP](https://img.shields.io/badge/Deploy-Cloud%20Run-4285F4?logo=googlecloud&logoColor=white)](https://cloud.google.com/run)
+[![Firebase](https://img.shields.io/badge/Host-Firebase-FFCA28?logo=firebase&logoColor=black)](https://firebase.google.com/)
+[![Zero Retention](https://img.shields.io/badge/Data%20Policy-Zero%20Retention-success)](SECURITY.md)
 
 </div>
 
 ---
 
-## 📋 Table of Contents
+## 🔭 Overview
 
-- [Overview](#-overview)
-- [Key Features](#-key-features)
-- [Architecture](#-architecture)
-- [Tech Stack](#-tech-stack)
-- [Local Setup](#-local-setup)
-- [Deployment](#-deployment)
-- [Security & Data Privacy](#-security--data-privacy-policy)
-- [Institutional Guardrails](#-institutional-guardrails)
-- [Contributing](#-contributing)
+Modern financial AI systems routinely encode demographic bias — not through overt discrimination, but through **proxy variables**: features that silently correlate with race, gender, or national origin. RayCtify was engineered to break that chain.
 
----
+RayCtify is a **full-scale Algorithmic Equilibrium Suite** that wraps black-box machine learning models in a transparent *Glass Box* proxy. It forces your loan approval AI to evaluate applicants based exclusively on standardized, legally defensible financial metrics — and then proves it, mathematically.
 
-## 🧠 Overview
+> *"RayCtify doesn't just flag bias. It diagnoses it, heals it, stress-tests it, establishes a ground-truth baseline against it, and trains future models to never repeat it."*
 
-Financial institutions have long relied on Machine Learning models to automate loan approval decisions. But these models carry a silent, systemic risk: **proxy bias** — the tendency of an AI to learn hidden correlations between legally permissible financial metrics and protected demographic identifiers such as Age, Gender, Ethnicity, or ZIP Code.
+### What Makes RayCtify Different
 
-RayCtify was built to solve this **at the architectural level**. Rather than simply flagging biased outputs after the fact, RayCtify acts as a **Glass Box wrapper** around any Black Box model. It intercepts the model's input pipeline, surgically zeroes out the influence of sensitive parameters, and forces every prediction to rest solely on standardized, defensible financial anchors — Income, Credit Score, DTI Ratio, and Loan Amount.
-
-> The result is a loan decision engine that is not just accurate, but **auditable, equitable, and institutionally compliant**.
+Unlike point-solution fairness checkers, RayCtify operates across a **five-pillar lifecycle** — from raw model ingestion all the way to adversarial dataset generation for future model training. Every stage is traceable, auditor-ready, and built for enterprise deployment with zero data retention.
 
 ---
 
-## ✨ Key Features
+## 🏛️ The 5-Pillar Architecture
 
-| Pillar | Module | Description |
-|:---:|---|---|
-| 🔬 | **The Interceptor** | Ingests `.pkl`, `.onnx`, `.pmml` models, detects sensitive feature dependencies, and exports a fully healed `RayCtifiedWrapper` with zero data retention. |
-| 🔭 | **The Model Auditor** | Decomposes feature importance into a normalized 100% influence matrix with True-Sign Preservation — showing precisely whether each feature helped or hurt the applicant. |
-| ⚡ | **The Arena** | Batch stress-testing engine for hundreds of records. Runs side-by-side delta comparisons and surfaces explicit **Bias Penalty** scores per applicant. |
-| 🛡️ | **Institutional Guardrails** | Hard-coded, vectorized banking policies that override ML model anomalies — including automatic rejection of deep subprime scores below 500. |
-| 🔒 | **Zero-Retention Architecture** | All processing occurs in-memory. Uploaded models and applicant data are garbage-collected immediately after evaluation, leaving no trace on disk. |
-| 📐 | **DTI Standardization** | Full alignment with the industry-standard `dti_ratio` metric, carrying its mandated 20% baseline weight across the entire reporting matrix. |
+### Pillar I — 🔬 The Interceptor *(Model Healing)*
+
+The entry point of the RayCtify pipeline. The Interceptor ingests serialized institutional models in `.pkl`, `.onnx`, and `.pmml` formats via a secure deserialization layer, with no data written to disk at any stage.
+
+**What it does:**
+
+- Maps the full feature schema of the ingested model
+- Detects sensitive demographic parameters (race, gender, zip code proxies, national origin, etc.)
+- Wraps the original model in the `RayCtifiedWrapper` — a transparent proxy layer
+- Mathematically **zeroes out the weights** of all identified illegal proxy variables
+- Exports the "healed" model in a clean, auditable format
+
+The result is a production-ready model that has been surgically corrected, with a full audit trail of exactly which parameters were neutralized and why.
+
+---
+
+### Pillar II — 🔍 The Model Auditor *(Granular Introspection)*
+
+Designed for **single-applicant micro-analysis**, the Model Auditor gives compliance officers and data scientists an unambiguous view into exactly how the AI reached its decision.
+
+**Key capabilities:**
+
+- **High-Precision Normalization** — Dynamically extracts the internal coefficients of the model and forces them into a perfect 100% relative influence breakdown, so every factor's contribution is immediately legible.
+- **True-Sign Preservation** — Accurately renders the push/pull polarity of each decision factor. An auditor can see, for example, that `DTI` dragged the approval score down (−) while `income_to_debt_ratio` pushed it up (+), cleanly separating financial reality from demographic noise.
+- **Demographic Isolation** — Highlights the exact delta between what the base model would have scored and what the RayCtified model scores for the same applicant.
+
+---
+
+### Pillar III — ⚔️ The Arena *(Batch Stress Testing)*
+
+Where individual auditing ends, institutional-scale evaluation begins. The Arena evaluates hundreds of applicant records **simultaneously**, pitting the original biased model directly against its RayCtified counterpart.
+
+**Key capabilities:**
+
+- Ingests bulk applicant datasets and runs parallel inference on both models
+- Calculates an explicit **"Bias Penalty" delta score** for each applicant — a precise, numerical representation of how much the base model artificially suppressed approval probability for that individual
+- Aggregates results by demographic cohort, generating the kind of statistically rigorous output that satisfies CFPB, OCC, and internal legal review
+- Provides side-by-side approval rate comparisons that are Wall Street presentation-ready
+
+---
+
+### Pillar IV — 📐 The Reference Model *(Ground Truth Baseline)*
+
+Because even a RayCtified AI model can drift in subtle, unpredictable ways, RayCtify includes a mathematically pristine **Reference Engine** built on the `REFERENCE_MODEL_SCHEMA`.
+
+This schema explicitly excludes all demographic variables and uses only **9 pristine financial factors** (credit score, income, DTI, employment history, and related signals) to produce a classical, rules-based loan scoring output.
+
+**Why this matters:**
+
+The Reference Model answers the auditor's most fundamental question: *"What would a standard, purely mathematical banking formula say about this applicant?"* Any significant deviation between the AI's output and the Reference Model's output is a quantified signal of **algorithmic drift** — the kind of unexplained divergence that regulators flag during examination.
+
+---
+
+### Pillar V — 💉 The Vaccine *(Adversarial Dataset Generation)*
+
+The Vaccine generator closes the loop on the entire auditing lifecycle. Once a model's vulnerabilities have been fully exposed through Pillars I–IV, the Vaccine creates the cure.
+
+**What it generates:**
+
+- **Demographically Neutralized Batches** — Synthetic datasets where sensitive attributes are balanced and de-correlated from financial outcomes, suitable for retraining
+- **Adversarial Edge Cases** — Deliberately crafted applicant profiles designed to probe and stress-test model boundaries, exposing latent proxy dependencies before they reach production
+- **Safe Augmentation Sets** — Clean, policy-compliant datasets ready to be fed back to data-science teams as training signal
+
+The Vaccine effectively **inoculates future models** against proxy bias before they are ever trained, breaking the cycle at the source.
+
+---
+
+## 🛡️ Enterprise Features
+
+### Institutional Guardrails
+
+RayCtify enforces hard, non-negotiable banking policies through vectorized Pandas logic that intercepts the prediction pipeline before output is returned. These guardrails operate safely across large batch jobs with no performance penalty.
+
+- Automatically rejects any applicant with a credit score below **500** (deep subprime threshold), regardless of the AI model's computed probability
+- Configurable policy thresholds map to internal credit policy documents, providing a clear audit chain between code and compliance documentation
+
+### Standardized Telemetry
+
+To ensure outputs are compatible with regulatory submissions and internal risk dashboards:
+
+- DTI is standardized as `dti_ratio` with a **20% baseline weight**, enforced across all scoring computations
+- All feature names are normalized to an industry-standard schema before any inference is run, guaranteeing consistent reporting across model versions and vendors
+
+### Zero-Retention In-Memory Processing
+
+No institutional IP or personally identifiable information (PII) is ever written to disk, logged to application storage, or retained in any server-side cache. All processing occurs entirely in-memory within ephemeral Cloud Run containers that are destroyed after each request. See the [Security Policy](#-security--data-privacy) for full details.
 
 ---
 
 ## 🏗️ Architecture
 
-RayCtify is organized into three primary operational pillars, each serving a distinct function in the bias audit lifecycle.
-
 ```
-┌──────────────────────────────────────────────────────────────────┐
-│                        RayCtify Platform                         │
-│                                                                  │
-│   ┌─────────────────┐  ┌──────────────────┐  ┌───────────────┐  │
-│   │  THE INTERCEPTOR │  │  THE MODEL AUDIT │  │   THE ARENA   │  │
-│   │  (Model Healing) │  │  (Introspection) │  │ (Batch Tests) │  │
-│   └────────┬─────────┘  └────────┬─────────┘  └──────┬────────┘  │
-│            └─────────────────────┴────────────────────┘           │
-│                                  │                                │
-│                    ┌─────────────▼──────────────┐                │
-│                    │   FastAPI Backend (GCR)     │                │
-│                    │   Zero-Retention | Async    │                │
-│                    └─────────────┬──────────────┘                │
-│                                  │                                │
-│                    ┌─────────────▼──────────────┐                │
-│                    │   React Frontend (Firebase) │                │
-│                    │   Vite | Tailwind | Framer  │                │
-│                    └────────────────────────────┘                │
-└──────────────────────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────────────┐
+│                        CLIENT LAYER                             │
+│         React (Vite) · Tailwind CSS · Framer Motion             │
+│                    Firebase Hosting (CDN)                       │
+└──────────────────────────┬──────────────────────────────────────┘
+                           │ HTTPS / REST
+┌──────────────────────────▼──────────────────────────────────────┐
+│                        API LAYER                                │
+│              FastAPI · Python 3.11 · Pydantic v2                │
+│              Google Cloud Run (Ephemeral Containers)            │
+└──┬──────────┬────────────┬───────────────┬──────────────────────┘
+   │          │            │               │
+   ▼          ▼            ▼               ▼
+Pillar I   Pillar II   Pillar III      Pillar IV     Pillar V
+Interceptor  Auditor     Arena        Reference      Vaccine
+  (.pkl/      (Single    (Batch        (Ground        (Adversarial
+  .onnx/      Applicant  Stress        Truth          Generator)
+  .pmml)      Analysis)  Testing)      Baseline)
+   │          │            │               │               │
+   └──────────┴────────────┴───────────────┴───────────────┘
+                           │
+              ┌────────────▼────────────┐
+              │   Scikit-Learn · Pandas  │
+              │   NumPy · In-Memory Only │
+              └─────────────────────────┘
 ```
-
-### 🔬 Pillar I — The Interceptor *(Model Healing)*
-
-The Interceptor is the core remediation engine. It accepts any serialized model file and performs dynamic introspection on the underlying Scikit-Learn estimator to build a complete map of its feature dependencies. Upon detecting sensitive parameters (e.g., `demographic_segment`, `zip_code_cluster`, `age_band`), it wraps the estimator in a `RayCtifiedWrapper` — a custom proxy class that intercepts every call to `predict()` and `predict_proba()`, silently zeroing the weights of demographic features before the computation proceeds.
-
-### 🔭 Pillar II — The Model Auditor *(Granular Introspection)*
-
-The Model Auditor operates at the level of a single applicant record, giving compliance officers a mathematically precise view into *why* the model reached its decision. It extracts the raw `coef_` or `feature_importances_` array from the estimator and normalizes each feature's contribution to a clean 100% influence scale. Critically, it applies **True-Sign Preservation** — the signed direction of each feature's impact is retained throughout normalization, preventing the audit report from misrepresenting a detrimental feature as beneficial.
-
-### ⚡ Pillar III — The Arena *(Batch Stress-Testing)*
-
-The Arena is designed for institutional-scale validation. It accepts a batch of hundreds of applicant records and runs each one through both the original Base model and the RayCtified model in a vectorized, parallel pipeline. For every record it computes a **Bias Penalty** — the exact delta between the biased score and the equitable score — giving risk and compliance teams a quantified measure of how severely demographic noise was distorting outcomes.
 
 ---
 
-## 🛠️ Tech Stack
+## 🧰 Tech Stack
 
 | Layer | Technology |
 |---|---|
 | **Frontend Framework** | React 18 (Vite) |
-| **UI Styling** | Tailwind CSS |
+| **Styling** | Tailwind CSS |
 | **Animations** | Framer Motion |
 | **Frontend Hosting** | Firebase Hosting |
-| **Backend Runtime** | Python 3.11 |
-| **API Framework** | FastAPI (async) |
-| **ML Engine** | Scikit-Learn |
+| **Backend Language** | Python 3.11 |
+| **API Framework** | FastAPI |
+| **ML Runtime** | Scikit-Learn |
 | **Data Processing** | Pandas, NumPy |
-| **Backend Hosting** | Google Cloud Run |
+| **Cloud Runtime** | Google Cloud Run |
+| **Serialization Support** | `.pkl`, `.onnx`, `.pmml` |
 
 ---
 
-## 🚀 Local Setup
+## ⚙️ Local Setup
 
 ### Prerequisites
 
-Ensure you have the following installed before proceeding: Python `>= 3.11`, Node.js `>= 18.x`, `pip`, and `npm`. The Google Cloud SDK (`gcloud`) and Firebase CLI are required for deployment only.
+Before running RayCtify locally, ensure the following are installed:
 
-### 1 · Clone the Repository
+- Python 3.11+
+- Node.js 18+ and npm
+- Google Cloud SDK (for deployment)
+- Firebase CLI (`npm install -g firebase-tools`)
+
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/your-org/rayctify.git
 cd rayctify
 ```
 
-### 2 · Backend Setup
+### 2. Backend Setup
 
 ```bash
 # Navigate to the backend directory
 cd backend
 
 # Create and activate a virtual environment
-python -m venv venv
-source venv/bin/activate       # On Windows: venv\Scripts\activate
+python -m venv .venv
+source .venv/bin/activate        # macOS / Linux
+# .venv\Scripts\activate         # Windows
 
-# Install all Python dependencies
+# Install dependencies
 pip install -r requirements.txt
 
 # Start the FastAPI development server
-uvicorn main:app --reload --port 8000
+uvicorn main:app --reload --host 0.0.0.0 --port 8000
 ```
 
-> ✅ The API will be available at `http://localhost:8000`  
-> 📖 Interactive Swagger UI at `http://localhost:8000/docs`
+The API will be available at `http://localhost:8000`. Interactive documentation is served at `http://localhost:8000/docs`.
 
-### 3 · Frontend Setup
+### 3. Frontend Setup
 
 ```bash
 # Navigate to the frontend directory
 cd ../frontend
 
-# Install Node dependencies
+# Install dependencies
 npm install
+
+# Copy the environment template and configure your API URL
+cp .env.example .env.local
+# Edit .env.local → set VITE_API_BASE_URL=http://localhost:8000
 
 # Start the Vite development server
 npm run dev
 ```
 
-> ✅ The frontend will be available at `http://localhost:5173`
-
-### 4 · Environment Variables
-
-Create a `.env` file in the `/backend` directory:
-
-```env
-# Base URL for the FastAPI backend (used by the React frontend)
-VITE_API_BASE_URL=http://localhost:8000
-
-# Google Cloud project ID (required for Cloud Run deployment)
-GCP_PROJECT_ID=your-gcp-project-id
-```
+The frontend will be available at `http://localhost:5173`.
 
 ---
 
-## ☁️ Deployment
+## 🚀 Deployment
 
 ### Backend — Google Cloud Run
-
-RayCtify's backend is designed for Google Cloud Run, which provides containerized, stateless, auto-scaling execution — a critical property for the Zero-Retention security model.
 
 ```bash
 # Authenticate with Google Cloud
 gcloud auth login
-gcloud config set project YOUR_GCP_PROJECT_ID
+gcloud config set project YOUR_PROJECT_ID
 
-# Build and submit the Docker image to Google Container Registry
-gcloud builds submit --tag gcr.io/YOUR_GCP_PROJECT_ID/rayctify-api
+# Build and push the Docker image to Artifact Registry
+gcloud builds submit --tag gcr.io/YOUR_PROJECT_ID/rayctify-api
 
-# Deploy to Cloud Run
+# Deploy to Cloud Run (ephemeral, zero-retention configuration)
 gcloud run deploy rayctify-api \
-  --image gcr.io/YOUR_GCP_PROJECT_ID/rayctify-api \
+  --image gcr.io/YOUR_PROJECT_ID/rayctify-api \
   --platform managed \
   --region us-central1 \
   --allow-unauthenticated \
-  --memory 1Gi \
-  --timeout 120
+  --memory 2Gi \
+  --concurrency 80 \
+  --max-instances 10 \
+  --no-allow-unauthenticated   # Remove for public access
 ```
 
-> 💡 Once deployed, copy the service URL provided by Cloud Run and set it as `VITE_API_BASE_URL` in your frontend environment configuration.
+> **Note:** Cloud Run containers are stateless and ephemeral by design. No volume mounts or persistent storage are configured, enforcing the zero-retention security policy at the infrastructure level.
 
 ### Frontend — Firebase Hosting
 
 ```bash
-# Create a production build
+# Navigate to the frontend directory
 cd frontend
+
+# Build the production bundle
 npm run build
 
-# Install the Firebase CLI if not already present
-npm install -g firebase-tools
-
-# Authenticate and initialize Firebase (select 'Hosting')
+# Authenticate with Firebase
 firebase login
+
+# Initialize Firebase in the project (first time only)
 firebase init hosting
 
-# Deploy the production build to Firebase
+# Deploy to Firebase Hosting
 firebase deploy --only hosting
 ```
 
 ---
 
-## 🔒 Security & Data Privacy Policy
+## 🔒 Security & Data Privacy
 
-RayCtify was architected from the ground up with a **Zero-Retention** guarantee. No applicant data, no uploaded model files, and no prediction artifacts are ever written to disk, stored in a database, or logged to any external service.
+RayCtify was engineered from the ground up with institutional data governance requirements in mind.
 
-All processing occurs entirely within the **in-memory request lifecycle** of the FastAPI application. Uploaded `.pkl`, `.onnx`, or `.pmml` files are deserialized into Python objects in RAM, processed, and then explicitly garbage-collected via `gc.collect()` at the conclusion of each request handler. The Cloud Run execution environment is stateless and ephemeral by design — no data persists between container invocations.
+### Zero-Retention In-Memory Processing
 
-This architecture ensures compliance with data minimization principles under **GDPR**, **CCPA**, and applicable financial privacy regulations, making RayCtify safe for use with real applicant data in regulated institutional environments.
+All model artifacts, applicant records, and inference outputs are processed **exclusively in the memory of ephemeral Google Cloud Run containers**. Specifically:
 
-> ⚠️ **Disclaimer:** RayCtify does not provide legal compliance certification. Organizations operating in regulated jurisdictions should conduct their own independent review in consultation with qualified legal and compliance counsel.
+- No model files (`.pkl`, `.onnx`, `.pmml`) are written to disk or persisted in cloud storage
+- No applicant PII (names, SSNs, addresses, demographic attributes) is logged, stored, or transmitted to any third-party service
+- Each Cloud Run container instance is destroyed after completing its request lifecycle, leaving no residual data
+- Application logs are scoped to operational telemetry only (latency, status codes) and contain no user or model data
+
+### Institutional IP Protection
+
+Uploaded model files represent proprietary intellectual property. RayCtify's architecture ensures that:
+
+- Model weights and architecture details are **never retained** beyond the duration of a single API request
+- The `RayCtifiedWrapper` outputs a healed model for client download; no copy is stored server-side
+- All inter-service communication is encrypted in transit via TLS 1.3
+
+### Compliance Posture
+
+RayCtify's design is aligned with the requirements of the **Equal Credit Opportunity Act (ECOA)**, **Fair Housing Act (FHA)**, and **CFPB supervisory guidance** on algorithmic fairness. The Bias Penalty reports generated by The Arena are structured to support regulatory examination responses.
 
 ---
 
-## 🏦 Institutional Guardrails
+## 📂 Repository Structure
 
-The following hard-coded policies are enforced by the backend API and **cannot be overridden by the ML model** under any circumstances.
-
-| Policy | Rule | Enforcement Method |
-|---|---|---|
-| **Deep Subprime Hard Stop** | Credit Score `< 500` | Vectorized NumPy mask returns `[1.0, 0.0]` probability, bypassing the model entirely. |
-| **DTI Standardization** | `dti_ratio` at 20% baseline weight | Enforced across both the React feature catalog and FastAPI input schema simultaneously. |
+```
+rayctify/
+├── backend/
+│   ├── main.py                  # FastAPI application entry point
+│   ├── interceptor/             # Pillar I — Model healing logic
+│   ├── auditor/                 # Pillar II — Single-applicant introspection
+│   ├── arena/                   # Pillar III — Batch stress testing
+│   ├── reference_model/         # Pillar IV — Ground truth baseline engine
+│   ├── vaccine/                 # Pillar V — Adversarial dataset generation
+│   ├── guardrails/              # Institutional policy enforcement
+│   ├── schemas/                 # Pydantic request/response schemas
+│   ├── requirements.txt
+│   └── Dockerfile
+├── frontend/
+│   ├── src/
+│   │   ├── components/          # React UI components
+│   │   ├── pages/               # Route-level page components
+│   │   └── api/                 # API client layer
+│   ├── index.html
+│   ├── vite.config.ts
+│   └── package.json
+├── .github/
+│   └── workflows/               # CI/CD pipelines
+├── firebase.json
+└── README.md
+```
 
 ---
 
 ## 🤝 Contributing
 
-Contributions that improve auditing precision, expand model format support, or strengthen compliance tooling are welcome. Please open an issue to discuss your proposal before submitting a pull request.
-
-```bash
-# Create a feature branch
-git checkout -b feature/your-feature-name
-
-# After making changes, run the test suite
-pytest backend/tests/
-
-# Submit a pull request against the `main` branch
-```
+RayCtify is an enterprise-grade system. Contributions are reviewed against institutional standards for correctness, security, and auditability. Please read `CONTRIBUTING.md` before submitting a pull request.
 
 ---
 
 ## 📄 License
 
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the RayCtify Enterprise License. See `LICENSE` for full terms.
 
 ---
 
 <div align="center">
 
-<br />
+**Built to make algorithmic fairness the default, not the exception.**
 
-*Built to make algorithmic fairness an engineering standard, not an afterthought.*
-
-<br />
+*RayCtify — Achieving Algorithmic Equilibrium*
 
 </div>
