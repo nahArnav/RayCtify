@@ -336,12 +336,6 @@ rayctify/
 
 ---
 
-## 🤝 Contributing
-
-RayCtify is an enterprise-grade system. Contributions are reviewed against institutional standards for correctness, security, and auditability. Please read `CONTRIBUTING.md` before submitting a pull request.
-
----
-
 ## 📄 License
 
 This project is licensed under the RayCtify Enterprise License. See `LICENSE` for full terms.
