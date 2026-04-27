@@ -186,7 +186,7 @@ Before running RayCtify locally, ensure the following are installed:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/nahArnav/rayctify.git
+git clone https://github.com/nahArnav/RayCtify.git
 cd rayctify
 ```
 
